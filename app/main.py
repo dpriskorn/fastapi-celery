@@ -12,10 +12,10 @@ app = FastAPI()
 
 
 def celery_on_message(body):
-    log.warn(body)
+    log.warning(body)
 
 def background_on_message(task):
-    log.warn(task.get(on_message=celery_on_message, propagate=False))
+    log.warning(task.get(on_message=celery_on_message, propagate=False))
 
 
 @app.get("/{word}")

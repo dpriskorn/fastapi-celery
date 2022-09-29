@@ -10,7 +10,9 @@
 ## Run example
 
 1. Run command ```docker-compose up```to start up the RabbitMQ, Redis, flower and our application/worker instances.
-2. Navigate to the [http://localhost:8000/docs](http://localhost:8000/docs) and execute test API call. You can monitor the execution of the celery tasks in the console logs or navigate to the flower monitoring app at [http://localhost:5555](http://localhost:5555) (username: user, password: test).
+2. Navigate to the [http://localhost:8000/docs](http://localhost:8000/docs) and execute test API call. 
+3. You can monitor the execution of the celery tasks in the console logs or navigate to the flower monitoring 
+app at [http://localhost:5555](http://localhost:5555) (username: user, password: test).
 
 ## Run application/worker without Docker?
 

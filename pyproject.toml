@@ -12,6 +12,7 @@ hypercorn = "^0.13.2"
 celery = "^5.2.3"
 redis = "^4.1.0"
 wikibaseintegrator = "^0.12.1"
+rich = "^12.5.1"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^3.8.3"

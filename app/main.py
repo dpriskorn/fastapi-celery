@@ -14,6 +14,7 @@ app = FastAPI()
 def celery_on_message(body):
     log.warning(body)
 
+
 def background_on_message(task):
     log.warning(task.get(on_message=celery_on_message, propagate=False))
 
@@ -23,7 +24,7 @@ async def root(word: str, background_task: BackgroundTasks):
     task_name = None
 
     # set correct task name based on the way you run the example
-    if not bool(os.getenv('DOCKER')):
+    if not bool(os.getenv("DOCKER")):
         task_name = "app.worker.celery_worker.test_celery"
     else:
         task_name = "app.app.worker.celery_worker.test_celery"

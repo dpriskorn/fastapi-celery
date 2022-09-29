@@ -3,6 +3,8 @@ version: "3.7"
 services:
   rabbitmq:
     image: "bitnami/rabbitmq:3.7"
+    environment:
+      - RABBITMQ_DISK_FREE_ABSOLUTE_LIMIT=50MB
     ports:
       - "4369:4369"
       - "5672:5672"

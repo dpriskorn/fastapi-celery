@@ -19,7 +19,7 @@ def background_on_message(task):
     log.warning(task.get(on_message=celery_on_message, propagate=False))
 
 
-@app.get("/{word}")
+@app.get("/add/{word}")
 async def root(word: str, background_task: BackgroundTasks):
     task_name = None
 
@@ -34,3 +34,8 @@ async def root(word: str, background_task: BackgroundTasks):
     background_task.add_task(background_on_message, task)
 
     return {"message": "Word received"}
+
+
+@app.get("/")
+def read_root():
+    return {"hello": "world"}
